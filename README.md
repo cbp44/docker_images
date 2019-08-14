@@ -7,7 +7,7 @@ I have published all of the images to Docker Hub for easy usage as base images o
 ## Dockerize
 Docker images using `ubuntu` as base with [dockerize](https://github.com/jwilder/dockerize) program pre-installed.
 
-Documentation [here](dockerize/README.md)
+Documentation [here](https://github.com/cbp44/docker_images/tree/master/dockerize)
 
 ---
 These are under an MIT license so feel free to do whatever you want with them.
