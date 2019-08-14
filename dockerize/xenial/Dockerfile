@@ -1,5 +1,5 @@
 # Use curl buildpack-deps image to get curl installed for us to download dockerize from GitHub
-FROM buildpack-deps:curl-xenial as install
+FROM buildpack-deps:xenial-curl as install
 
 # Version of Dockerize to install
 ARG DOCKERIZE_VERSION=v0.6.1
@@ -28,7 +28,7 @@ LABEL org.label-schama.name="dockerize" \
       org.label-schama.description="An ubuntu:${UBUNTU_CODENAME} image with dockerize pre-installed." \
       org.label-schama.license="MIT" \
       org.label-schama.docker.cmd="docker run --rm cbp44/dockerize:${UBUNTU_CODENAME}" \
-      org.label-schama.usage="https://github.com/cbp44/docker_images/blob/master/dockerize/USAGE.md#${UBUNTU_CODENAME}" \
+      org.label-schama.usage="https://github.com/cbp44/docker_images/blob/master/dockerize/xenial/README.md" \
       org.label-schama.url="https://github.com/jwilder/dockerize" \
       org.label-schama.vcs-url="https://github.com/cbp44/docker_images"
 

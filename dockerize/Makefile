@@ -1,9 +1,9 @@
-.PHONY: build
+.PHONY: all bionic xenial
 
-build_date != date -u +"%Y-%m-%dT%H:%M:%SZ"
-# base_built = true
+all: bionic xenial
 
-build: base/Dockerfile bionic/Dockerfile xenial/Dockerfile
-	docker build --force-rm --build-arg BUILD_DATE=${build_date} -t dockerize:base ./base
-	docker build --force-rm --build-arg BUILD_DATE=${build_date} -t dockerize:xenial ./xenial
-	docker build --force-rm --build-arg BUILD_DATE=${build_date} -t dockerize:bionic ./bionic
+bionic: bionic/Dockerfile
+	docker build --force-rm -t dockerize:bionic ./bionic
+
+xenial: xenial/Dockerfile
+	docker build --force-rm -t dockerize:xenial ./xenial
