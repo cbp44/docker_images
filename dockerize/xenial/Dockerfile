@@ -1,8 +1,8 @@
 FROM dockerize:base as dockerize
 
 # Set the proper codename in the two FROM and ARG statements below
-FROM ubuntu:bionic
-ARG UBUNTU_CODENAME=bionic
+FROM ubuntu:xenial
+ARG UBUNTU_CODENAME=xenial
 
 
 LABEL maintainer="Chris Preusch"
