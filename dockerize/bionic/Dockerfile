@@ -19,10 +19,6 @@ LABEL org.label-schama.name="dockerize" \
 # label-schame.org version used for labels
 LABEL org.label-schema.schema-version="1.0.0-rc1"
 
-# The date and time the public Docker image was built
-ARG BUILD_DATE
-LABEL org.label-schama.build-date=$BUILD_DATE
-
 # Copy dockerize into image from dockerize:base
 COPY --from=dockerize /usr/local/bin/dockerize /usr/local/bin/dockerize
 

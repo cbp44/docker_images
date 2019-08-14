@@ -14,11 +14,6 @@ LABEL org.label-schama.name="dockerize" \
 # label-schame.org version used for labels
 LABEL org.label-schema.schema-version="1.0.0-rc1"
 
-# The date and time the public Docker image was built
-ARG BUILD_DATE
-LABEL org.label-schama.build-date=$BUILD_DATE
-
-
 # Version of Dockerize to install
 ARG DOCKERIZE_VERSION=v0.6.1
 # The md5sum for the v0.6.1 tar.gz archive from GitHub (calculated by me on August 14, 2019)
