@@ -1,4 +1,4 @@
-FROM dockerize:base as dockerize
+FROM cbp44/dockerize:base as dockerize
 
 # Set the proper codename in the two FROM and ARG statements below
 FROM ubuntu:xenial
