@@ -1,28 +1,31 @@
-# Dockerize Ubuntu
+# dockerize ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/cbp44/dockerize)
+
+[Dockerize](https://github.com/jwilder/dockerize) is a very useful utility written by [Jason Wilder](http://jasonwilder.com/blog/2014/10/13/a-simple-way-to-dockerize-applications/) to simplify running applications in Docker containers.
+
+> It allows you to:
+>
+> - Generate application configuration files at container startup time from templates and container environment variables
+> - Tail multiple log files to stdout and/or stderr
+> - Wait for other services to be available using TCP, HTTP(S), unix before starting the main process.
 
 ## Supported tags and respective `Dockerfile` links
 
 - [`cbp44/dockerize:bionic`, `cbp44/dockerize:latest`](https://github.com/cbp44/docker_images/blob/master/dockerize/bionic/Dockerfile)
 - [`cbp44/dockerize:xenial`](https://github.com/cbp44/docker_images/blob/master/dockerize/xenial/Dockerfile)
 
-## What is Dockerize?
-Dockerize is a utility to simplify running applications in Docker containers. Check out the `dockerize` [documentation](https://github.com/jwilder/dockerize#usage) for nice examples of how to use the `dockerize` program in your Docker images.
-
-Here, I created Docker images using `ubuntu` as base with the [dockerize](https://github.com/jwilder/dockerize) program pre-installed at `/usr/local/bin/dockerize`.
-
-## Why make these images?
-The images pushed by the creator of `dockerize` use `alpine` as the base image, and just copying `/usr/local/bin/dockerize` from `jwilder/dockerize` into an `ubuntu` image fails due to dependency issues. In a lot of my projects I use `ubuntu` base images.
+## Why create these images?
+The [`jwilder/dockerize`](https://hub.docker.com/r/jwilder/dockerize) images are [`alpine`](https://hub.docker.com/_/alpine) based and just copying `/usr/local/bin/dockerize` from one of his images into an [`ubuntu`](https://hub.docker.com/_/ubuntu) image fails with dependency issues when you try running `dockerize`.
 
 ## Usage
 
-### Command line usage
+#### Command line usage
 
 ```sh
 # Displays dockerize help
 docker run --rm cbp44/dockerize:latest --help
 ```
 
-### Dockerfile usage
+#### Dockerfile usage
 
 ```dockerfile
 FROM cbp44/dockerize:latest as dockerize
@@ -30,15 +33,5 @@ FROM cbp44/dockerize:latest as dockerize
 # Waits until google.com is reachable inside of the container and runs echo command if it eventually is reachable. If it isn't reachable in 10 seconds, the container exits with failed exit status.
 CMD dockerize -wait http://google.com && echo "Hello World"
 ```
-### Building them yourself
-1. `git clone git@github.com:cbp44/docker_images.git`
-2. `cd ./docker_images/dockerize`
-3. Build the image you want
-    ```sh
-    # Build the bionic image
-    make bionic
-    # Build the xenial image
-    make xenial
-    # Build them both
-    make all
-    ```
+
+See more usage examples [here](https://github.com/jwilder/dockerize#usage).
