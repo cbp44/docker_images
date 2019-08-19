@@ -1,4 +1,4 @@
-docker_images ![MIT License](https://img.shields.io/badge/license-MIT-success) ![GitHub search hit counter](https://img.shields.io/github/search/cbp44/docker_images/views)
+docker_images ![MIT License](https://img.shields.io/badge/license-MIT-success)
 =============
 
 <img src="https://www.docker.com/sites/default/files/d8/2019-07/horizontal-logo-monochromatic-white.png" height="55" align="right" />
@@ -6,7 +6,7 @@ A collection of useful Docker images I've created for use in various projects.
 
 All of these images have been published to [Docker Hub](https://hub.docker.com/) for easy usage as base images or as a way to copy software from them in a multi-stage build `Dockerfile`.
 
-dockerize ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/cbp44/dockerize) ![Docker Stars](https://img.shields.io/docker/stars/cbp44/dockerize)
+dockerize ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/cbp44/dockerize)
 ---------
 [Dockerize](https://github.com/jwilder/dockerize) is a very useful utility written by [Jason Wilder](http://jasonwilder.com/blog/2014/10/13/a-simple-way-to-dockerize-applications/) to simplify running applications in Docker containers.
 
